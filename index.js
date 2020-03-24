@@ -5,7 +5,7 @@ async function apiPost(client, token) {
 	if (!client) return console.log("Make sure you provided your bot's instance");
 	const headers = {
 		"Content-Type": "application/json",
-		authorization: `${token}`
+		"authorization": `${token}`
 	};
 	if (client.guilds.cache !== undefined) {
 		const body = {
