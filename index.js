@@ -1,6 +1,6 @@
 const fetch = require("node-fetch"),
 	url = "https://bot-listweb.glitch.me/api/stats/";
-async function apiPost(client, token) {
+async function apiPost(id, token) {
 	if (!token) return console.log("Invalid token provided!");
 	if (!client) return console.log("Make sure you provided your bot's instance");
 	const headers = {
@@ -23,7 +23,7 @@ async function apiPost(client, token) {
 		const body = {
 			serverCount: client.guilds.size
 		};
-		const response = await fetch(`${url}/${client.user.id}`, {
+		const response = await fetch(`${url}/${id}`, {
 			menthod: "POST",
 			headers: headers,
 			body: JSON.stringify(body)
