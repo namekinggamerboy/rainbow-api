@@ -23,7 +23,7 @@ async function apiPost(id, token) {
 		const body = {
 			serverCount: client.guilds.size
 		};
-		const response = await fetch(`${url}/${client.user.id}`, {
+		const response = await fetch(`${url}/${id}`, {
 			menthod: "POST",
 			headers: headers,
 			body: JSON.stringify(body)
