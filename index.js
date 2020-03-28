@@ -7,7 +7,7 @@ async function apiPost(client, token) {
 		"Content-Type": "application/json",
 		authorization: `${token}`
 	};
-	if (client.guilds.cache !== undefined) {
+	if (client.guilds.cache.size === undefined||null) {
 		const body = {
 			serverCount: client.guilds.cache.size
 		};
@@ -19,7 +19,7 @@ async function apiPost(client, token) {
 		const jsonResponse = response.json();
 		if (jsonResponse.success == true) return console.log("Server count posted!");
 		else return console.log("Error while posting server count");
-	} else if (client.guilds.cache == undefined) {
+	} else if (client.guilds.cache.size == undefined||null) {
 		const body = {
 			serverCount: client.guilds.size
 		};
