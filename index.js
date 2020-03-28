@@ -11,7 +11,7 @@ async function apiPost(client, token) {
 		const body = {
 			serverCount: client.guilds.cache.size
 		};
-		const response = await fetch(`${url}/${client.user.id}`, {
+		const response = await fetch(`${url}/${client}`, {
 			menthod: "POST",
 			headers: headers,
 			body: JSON.stringify(body)
@@ -23,7 +23,7 @@ async function apiPost(client, token) {
 		const body = {
 			serverCount: client.guilds.size
 		};
-		const response = await fetch(`${url}/${client.user.id}`, {
+		const response = await fetch(`${url}/${client}`, {
 			menthod: "POST",
 			headers: headers,
 			body: JSON.stringify(body)
