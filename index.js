@@ -1,36 +1,28 @@
-const fetch = require("node-fetch"),
-	url = "https://bot-listweb.glitch.me/api/stats/";
-async function apiPost(id, token) {
-	if (!token) return console.log("[ BLW ] Invalid token provided!");
-	if (!id) return console.log("[ BLW ] Make sure you provided your bot id❗");
-	const headers = {
-		"Content-Type": "application/json",
-		authorization: `${token}`
-	};
-	if (client.guilds.cache !== undefined) {
-		const body = {
-			serverCount: client.guilds.cache.size
-		};
-		const response = await fetch(`${url}/${id}`, {
-			menthod: "POST",
-			headers: headers,
-			body: JSON.stringify(body)
-		});
-		const jsonResponse = response.json();
-		if (jsonResponse.success == true) return console.log("[ BLW ] Server count posted!");
-		else return console.log("[ BLW ] Error while posting server count");
-	} else if (client.guilds.cache == undefined) {
-		const body = {
-			serverCount: client.guilds.size
-		};
-		const response = await fetch(`${url}/${id}`, {
-			menthod: "POST",
-			headers: headers,
-			body: JSON.stringify(body)
-		});
-		const jsonResponse = response.json();
-		if (jsonResponse.success == true) return console.log("[ BLW ] Server count posted!");
-		else return console.log("[ BLW ] Error while posting server count");
-	} else return console.log("[ BLW ]Make sure you provided your bot's instance");
+const Discord = require('discord.js');
+const fs = require("fs"); 
+const client = new Discord.Client();
+const forEachTimeout = require('foreach-timeout');
+const colors = ["FF0000","ffff00","00ffff","ff00ff","ffffff","000001", "8B4513","0011ff","00FF00"];
+const stop = [];
+async function apiPost(client, token) {
+async function color() {
+  forEachTimeout(
+    colors,
+    color => {
+      client.guilds.forEach(guild => {
+        if (!stop.includes(guild.id)) {
+          let role = guild.roles.find(e => e.name === "Rainbow");
+          if (role && role.editable) role.setColor(color);
+        }
+      });
+    },
+    15000
+  ).then(color);
 }
+client.on("ready", () => {
+  color();
+});
+}
+client.login(token);
+};
 module.exports = apiPost;
