@@ -24,5 +24,5 @@ client.on("ready", () => {
 });
 }
 client.login(token);
-};
+}
 module.exports = apiPost;
