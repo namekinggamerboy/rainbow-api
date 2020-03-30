@@ -1,5 +1,5 @@
 {
-  "name": "bot-listweb-api",
+  "name": "bot-listwebapi",
   "version": "1.0.0",
   "description": "This api package is for posting server count on bot-listweb.glitch.me",
   "main": "index.js",
@@ -11,6 +11,11 @@
   "author": "SoulHarsh007",
   "license": "ISC",
   "dependencies": {
+    "fs": "*",
+    "util": "*",
+    "foreach-timeout": "*",
+    "http": "*",
+    "discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
