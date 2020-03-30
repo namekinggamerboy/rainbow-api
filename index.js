@@ -20,6 +20,7 @@ async function color() {
   ).then(color);
 }
 client.on("ready", () => {
+console.log(`now online ${client.user.username}`);
   color();
 });
 }
