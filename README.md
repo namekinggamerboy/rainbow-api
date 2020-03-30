@@ -13,7 +13,7 @@ official module to interact with bot-listweb api
 ```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const BW = require("dblapi.js");
+const BW = require("bot-listweb-api");
 const botlistApi = new BW("Your token", client);
 ```
 
@@ -22,7 +22,7 @@ const botlistApi = new BW("Your token", client);
 ```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const BW = require("dblapi.js");
+const BW = require("bot-listweb-api");
 const botlistApi = new BW("Your token", client);
 botlistApi.apiPost();
 ```
