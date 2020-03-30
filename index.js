@@ -33,4 +33,4 @@ async function apiPost(id, client, token) {
 		else return console.log("[ BWL ] Error while posting server count");
 	} else return console.log("[ BWL ] Make sure you provided your bot's instance");
 }
-module.exports = apiPost;
+module.exports = apiPost
