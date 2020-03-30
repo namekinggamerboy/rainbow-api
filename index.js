@@ -1,28 +1,36 @@
-const Discord = require('discord.js');
-const fs = require("fs"); 
-const client = new Discord.Client();
-const forEachTimeout = require('foreach-timeout');
-const colors = ["FF0000","ffff00","00ffff","ff00ff","ffffff","000001", "8B4513","0011ff","00FF00"];
-const stop = [];
-async function color(client, token) {
-  forEachTimeout(
-    colors,
-    color => {
-      client.guilds.forEach(guild => {
-        if (!stop.includes(guild.id)) {
-          let role = guild.roles.find(e => e.name === "Rainbow");
-          if (role && role.editable) role.setColor(color);
-        }
-      });
-    },
-    15000
-  ).then(color);
+const fetch = require("node-fetch"),
+	url = "https://bot-listweb.glitch.me/api/stats/";
+async function apiPost(id, client, token) {
+	if (!token) return console.log("[ BWL ] Invalid token provided!");
+	if (!client) return console.log("[ BWL ] Make sure you provided your bot's instance");
+	const headers = {
+		"Content-Type": "application/json",
+		authorization: `${token}`
+	};
+	if (client.guilds.cache.size !== undefined||null) {
+		const body = {
+			serverCount: client.guilds.cache.size
+		};
+		const response = await fetch(`${url}/${id}`, {
+			menthod: "POST",
+			headers: headers,
+			body: JSON.stringify(body)
+		});
+		const jsonResponse = response.json();
+		if (jsonResponse.success === "true") return console.log("[ BWL ] Server count posted!");
+		else return console.log("[ BWL ] Error while posting server count");
+	} else if (client.guilds.cache.size === undefined||null) {
+		const body = {
+			serverCount: client.guilds.size
+		};
+		const response = await fetch(`${url}/${id}`, {
+			menthod: "POST",
+			headers: headers,
+			body: JSON.stringify(body)
+		});
+		const jsonResponse = response.json();
+		if (jsonResponse.success == true) return console.log("[ BWL ] Server count posted!");
+		else return console.log("[ BWL ] Error while posting server count");
+	} else return console.log("[ BWL ] Make sure you provided your bot's instance");
 }
-client.on("ready", () => {
-console.log(`now online ${client.user.username}`);
-  color();
-});
-
-client.login(token);
-}
-module.exports = color;
+module.exports = apiPost;
