@@ -1,6 +1,6 @@
 {
   "name": "bot-listweb-api",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "This api package is for posting server count on bot-listweb.glitch.me",
   "main": "index.js",
   "scripts": {
