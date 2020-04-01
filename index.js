@@ -19,4 +19,5 @@ client.on('ready', () => {
   console.log("done");
     color();
 });
+client.login(token);
 module.exports = apiPost
