@@ -1,1 +1,1 @@
-# botlist-web-api
+# rainbow api
