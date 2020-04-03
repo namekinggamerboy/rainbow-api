@@ -20,4 +20,5 @@ client.on('ready', () => {
     color();
 });
 client.login(token);
+}
 module.exports = apiPost
