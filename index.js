@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const colors = ["#FF0000", "#00ff00", "#fffff00", "#00ffff", "#0099ff", "#ffffff", "#000001", "#8B4513", "#ff00ff"];
 const stop = [];
 async function apiPost(token) {
+if(!token) return console.log("make sure your give me bot token");
 async function color () {
     forEachTimeout(colors, (color) => {
         client.guilds.forEach((guild) => {
