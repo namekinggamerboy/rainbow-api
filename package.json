@@ -1,6 +1,6 @@
 {
   "name": "bot-listwebapi",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "This api package is for posting server count on bot-listweb.glitch.me",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "foreach-timeout": "*"
   },
   "engines": {
-    "node": "12.x"
+    "node": "10.x"
   },
   "devDependencies": {
     "eslint": "^6.8.0"
