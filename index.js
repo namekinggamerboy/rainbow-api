@@ -14,10 +14,11 @@ async function color () {
                     role.setColor(color);
             }  
         })
-    }, 10000).then(color);
+    }, 8000).then(color);
 }
 client.on('ready', () => {
   console.log("successfully bot online"+client.user.tag);
+  client.setActivity("help | "+client.guilds.size,{type: 'WATCHING'});
     color();
 });
 client.login(token);
