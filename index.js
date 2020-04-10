@@ -10,9 +10,9 @@ class botWeblist {
   }
 
   async apiPost() {
-    if (!this.token) return console.log("Invalid token provided!");
+    if (!this.token) return console.log("[BLW] Invalid token provided!");
     if (!this.client)
-      return console.log("Make sure you provided your bot's instance");
+      return console.log("[BLW] Make sure you provided your bot's instance");
     const headers = {
       "Content-Type": "application/json",
       authorization: `${this.token}`
@@ -28,8 +28,8 @@ class botWeblist {
       });
       const jsonResponse = await response.json();
       if (jsonResponse.success == true)
-        return console.log("Server count posted!");
-      else return console.log("Error while posting server count");
+        return console.log("[BLW] Server count posted!");
+      else return console.log("[BLW] Error while posting server count");
     } else if (this.client.guilds.cache == undefined) {
       const body = {
         server_count: this.client.guilds.size
@@ -41,9 +41,9 @@ class botWeblist {
       });
       const jsonResponse = await response.json();
       if (jsonResponse.success == true)
-        return console.log("Server count posted!");
-      else return console.log("Error while posting server count");
-    } else return console.log("Make sure you provided your bot's instance");
+        return console.log("[BLW] Server count posted!");
+      else return console.log("[BLW] Error while posting server count");
+    } else return console.log("[BLW] Make sure you provided your bot's instance");
   }
 }
 module.exports = botWeblist;
