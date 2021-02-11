@@ -5,7 +5,7 @@
 This API not add npmjs so some step following
 1. Make sure your PC install github
 2. Go to your package.json and add this
-`"rainbow-api": "github:namekinggamerboy/rainbow-api`
+`"rainbow-api": "github:namekinggamerboy/rainbow-api#0f71e80b26b39bd551de60c4a3b60442da6bb97d"`
 
 Follow this step successfully install rainbow-api 
 
