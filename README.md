@@ -1,6 +1,16 @@
 # rainbow api
 
-How to use this API
+**How to install**
+
+This API not add npmjs so some step following
+1. Make sure your PC install github
+2. Go to your package.json and add this
+`"rainbow-api": "github:namekinggamerboy/rainbow-api`
+
+Follow this step successfully install rainbow-api 
+
+
+**How to use this API**
 
 *Discord.js*
 ```js
