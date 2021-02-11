@@ -1,17 +1,16 @@
 {
   "name": "rainbowapi",
   "version": "1.0.4",
-  "description": "This api package is for posting server count on bot-listweb.glitch.me",
+  "description": "This spam API in discord",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "repository": "",
   "author": "namekinggamerboy",
   "license": "ISC",
     "dependencies": {
-    "discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
+    "discord.js": "*",
     "express": "^4.17.1",
     "foreach-timeout": "*"
   },
