@@ -23,7 +23,7 @@ Role Name- `Rainbow`
 
 
 Rainbow API also support blocklist
-Hownto use
+How to use-
 ```js
 const rainbow = require("rainbow-api");
 rainbow.blocklist(["< guild 1 id>", "<guild 2 id>"]);
