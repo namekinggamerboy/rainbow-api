@@ -2,10 +2,19 @@
 
 How to use this API
 
+*Discord.js*
 ```js
 const rainbow = require("rainbow-api");
 ( async () => {
 await rainbow.ready(client, 15000); // request Discord.js client ( must be discord.js version run v12) 
+})();
+```
+
+If u use uplife API
+```js
+const rainbow = require("rainbow-api");
+( async () => {
+await rainbow.uplife(client, 15000); // request Discord.js client ( must be discord.js version run v12) 
 })();
 ```
 
