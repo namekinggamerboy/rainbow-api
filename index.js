@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const forEachTimeout = require('foreach-timeout');
-const client = new Discord.Client();
 const colors = ["#FF0000", "#00ff00", "#fffff00", "#00ffff", "#0099ff", "#ffffff", "#000001", "#8B4513", "#ff00ff"];
-const stop = [];
 async function apiPost(client) {
 if(!token) return console.log("make sure your give me bot client");
 async function color () {
