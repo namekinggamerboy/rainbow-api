@@ -1,7 +1,10 @@
 const Discord = require('discord.js');
 const forEachTimeout = require('foreach-timeout');
 const colors = ["#FF0000", "#00ff00", "#fffff00", "#00ffff", "#0099ff", "#ffffff", "#000001", "#8B4513", "#ff00ff"];
-async function apiPost(client, time) {
+const stop = [];
+
+module.exports = {
+ async ready(client, time) {
 
 if(!client) return console.log("make sure your give me bot client");
 if(!client) return console.log("make sure your give Role color change Time (ms)");
@@ -22,5 +25,11 @@ client.on('ready', () => {
    color();
 });
 
+},
+
+ blocklist(guild){
+if(!Array.isArray(guild)) return console.error("make sure give me Array Type");
+ guild.map(e => stop.push(e));
 }
-module.exports = apiPost;
+
+}
