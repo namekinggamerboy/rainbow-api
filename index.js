@@ -1,8 +1,11 @@
 const Discord = require('discord.js');
 const forEachTimeout = require('foreach-timeout');
 const colors = ["#FF0000", "#00ff00", "#fffff00", "#00ffff", "#0099ff", "#ffffff", "#000001", "#8B4513", "#ff00ff"];
-async function apiPost(client) {
-if(!token) return console.log("make sure your give me bot client");
+async function apiPost(client, time) {
+
+if(!client) return console.log("make sure your give me bot client");
+if(!client) return console.log("make sure your give Role color change Time (ms)");
+if(time < 12000) return console.log("make sure your give me high then 120000");
 async function color () {
     forEachTimeout(colors, (color) => {
         client.guilds.cache.forEach((guild) => {
@@ -12,10 +15,10 @@ async function color () {
                     role.setColor(color);
             }  
         })
-    }, 10000).then(color);
+    }, time).then(color);
 }
 client.on('ready', () => {
-  console.log("successfully bot online"+client.user.tag);
+  console.log("successfully rainbow API on"+client.user.tag);
    color();
 });
 
