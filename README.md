@@ -24,7 +24,7 @@ If u use uplife API
 ```js
 const rainbow = require("rainbow-api");
 ( async () => {
-await rainbow.uplife(client, 65000); // request Discord.js client ( must be discord.js version run v12) 
+await rainbow.uplife(UP.bot, 65000); // request Uplife-api client ( must be uplife-api version run v2.0.26 or low) 
 })();
 ```
 
