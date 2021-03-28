@@ -7,7 +7,7 @@ module.exports = {
  async ready(client, time) {
 
 if(!client) return console.log("make sure your give me bot client");
-if(!client) return console.log("make sure your give Role color change Time (ms)");
+if(!time) return console.log("make sure your give Role color change Time (ms)");
 if(time < 12000) return console.log("make sure your give me high then 120000");
 async function color () {
     forEachTimeout(colors, (color) => {
@@ -30,7 +30,7 @@ client.on('ready', () => {
 async uplife(client, time) {
 
 if(!client) return console.log("make sure your give me bot client");
-if(!client) return console.log("make sure your give Role color change Time (ms)");
+if(!time) return console.log("make sure your give Role color change Time (ms)");
 if(time < 12000) return console.log("make sure your give me high then 120000");
 async function color () {
     forEachTimeout(colors, (color) => {
