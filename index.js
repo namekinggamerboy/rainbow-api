@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const forEachTimeout = require('foreach-timeout');
-const colors = ["#FF0000", "#00ff00", "#fffff00", "#00ffff", "#0099ff", "#ffffff", "#000001", "#8B4513", "#ff00ff"];
+const colors = ["#FF0000", "#00ff00", "#ffff00", "#00ffff", "#0099ff", "#ffffff", "#000001", "#8B4513", "#ff00ff"];
 const stop = [];
 
 module.exports = {
